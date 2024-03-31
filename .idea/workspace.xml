@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8162e0b6-0710-4b84-abee-49a2801d50ad" name="Changes" comment="Created initial structure">
-      <change afterPath="$PROJECT_DIR$/src/hash_table/components/Block.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hash_table/components/Bucket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hash_table/components/Item.java" afterDir="false" />
+    <list default="true" id="8162e0b6-0710-4b84-abee-49a2801d50ad" name="Changes" comment="Implemented static HT search/insert">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hash_table/HashTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hash_table/HashTable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hash_table/StaticHashTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hash_table/StaticHashTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hash_table/components/Bucket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hash_table/components/Bucket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hash_table/components/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hash_table/components/Item.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +28,20 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;m0hossam&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="6b5debf0-ead0-48af-b39f-bb90e49da6e0" />
+        <option name="url" value="https://github.com/m0hossam/db_data_structures.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -37,17 +51,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;D:/IDEA Repos/db_data_structures/src/Main.java&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "onboarding.tips.debug.path": "D:/IDEA Repos/db_data_structures/src/Main.java"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -72,7 +86,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711813879904</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Implemented static HT search/insert">
+      <option name="closed" value="true" />
+      <created>1711849700790</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1711849700790</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -88,6 +110,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created initial structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created initial structure" />
+    <MESSAGE value="Implemented static HT search/insert" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented static HT search/insert" />
   </component>
 </project>

@@ -19,18 +19,17 @@ public class Bucket
     public void insert(Item item)
 
     {
-        items[numItems++] = item;
+        items[numItems] = new Item(item.key, item.value);
+        numItems++;
     }
 
-    public void delete(Item item)
+    public void deleteItem(Item item)
     {
         for (int i = 0; i < numItems; i++)
         {
             if (item.isEqualTo(items[i]))
             {
-                for (int j = i + 1; j < numItems; j++)
-                    items[j - 1] = items[j];
-                items[numItems - 1] = null;
+                items[i] = null;
                 numItems--;
             }
         }

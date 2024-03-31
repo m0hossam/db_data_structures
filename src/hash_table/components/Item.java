@@ -1,5 +1,7 @@
 package hash_table.components;
 
+import java.util.Objects;
+
 public class Item
 {
     public Object key;
@@ -13,6 +15,12 @@ public class Item
 
     public boolean isEqualTo(Item item)
     {
-        return (item.key == key) && (item.value == value);
+        return (Objects.equals(item.key.toString(), key.toString())) && (Objects.equals(item.value.toString(), value.toString()));
+    }
+
+    public void setItem(Item item)
+    {
+        this.key = item.key;
+        this.value = item.value;
     }
 }
