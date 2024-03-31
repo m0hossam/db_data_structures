@@ -1,17 +1,21 @@
 package hash_table;
 
+import hash_table.components.*;
+
+import java.util.LinkedList;
+
 import static java.lang.Math.pow;
 
 public class StaticHashTable implements HashTable
 {
-    private final Object[] hashtableArray;
     public final int size;
+    private final Block[] blocks;
     private final int hashingPrime;
 
     public StaticHashTable(int size)
     {
-        hashtableArray = new Object[size];
         this.size = size;
+        blocks = new Block[size];
         hashingPrime = 151;
     }
 
@@ -31,22 +35,45 @@ public class StaticHashTable implements HashTable
     public void insert(Object key, Object value)
     {
         int index = hash(key);
-        hashtableArray[index] = value;
+        Item item =  new Item(key, value);
+
+        if (blocks[index] == null)
+            blocks[index] = new Block();
+        LinkedList<Bucket> block = blocks[index].buckets;
+
+        for (Bucket bucket : block) //traverse buckets inside block
+            for (int i = 0; i < bucket.numItems; i++) //traverse items inside bucket
+                if (bucket.items[i].key == key)
+                {
+                    bucket.items[i] = item;
+                    return;
+                }
+
+        if (block.isEmpty())
+            block.add(new Bucket());
+        Bucket bucket = block.getLast();
+        if (bucket.isFull())
+        {
+            block.add(new Bucket());
+            bucket = block.getLast();
+        }
+        bucket.insert(item);
     }
 
     @Override
     public Object search(Object key)
     {
-        int index = hash(key);
-        if (hashtableArray[index] != null)
-            return hashtableArray[index];
+        int index = hash(key); //find block
+        for (Bucket bucket : blocks[index].buckets) //traverse buckets inside block
+            for (int i = 0; i < bucket.numItems; i++) //traverse items inside bucket
+                if (bucket.items[i].key == key)
+                    return bucket.items[i].value;
         return null;
     }
 
     @Override
     public void delete(Object key)
     {
-        int index = hash(key);
-        hashtableArray[index] = null;
+        //TODO: Implement this
     }
 }
