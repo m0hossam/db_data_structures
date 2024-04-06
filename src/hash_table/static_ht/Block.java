@@ -1,29 +1,29 @@
-package hash_table.components;
+package hash_table.static_ht;
 
-public class Bucket
+class Block
 {
-    public final int maxItems = 2;
-    public final Item[] items = new Item[maxItems];
-    public int numItems = 0;
+    final int maxItems = 2;
+    final Item[] items = new Item[maxItems];
+    int numItems = 0;
 
-    public boolean isFull()
+    boolean isFull()
     {
         return numItems == maxItems;
     }
 
-    public boolean isEmpty()
+    boolean isEmpty()
     {
         return numItems == 0;
     }
 
-    public void insert(Item item)
+    void insert(Item item)
 
     {
         items[numItems] = new Item(item.key, item.value);
         numItems++;
     }
 
-    public void deleteItem(Item item)
+    void deleteItem(Item item)
     {
         for (int i = 0; i < numItems; i++)
         {

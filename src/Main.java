@@ -1,14 +1,21 @@
-import hash_table.StaticHashTable;
+import hash_table.static_ht.StaticHashTable;
 
 import java.util.Random;
 import java.util.Scanner;
 
-public class Main {
+public class Main
+{
+    public static Scanner scanner;
     public static void main(String[] args)
     {
-        StaticHashTable ht = new StaticHashTable(53);
+        scanner = new Scanner(System.in);
 
-        Scanner scanner = new Scanner(System.in);
+        scanner.close();
+    }
+
+    public static void testStaticHashTable()
+    {
+        StaticHashTable ht = new StaticHashTable(53);
 
         String alphabet = "abcdefghijklmnopqrtsuvwxyz";
         for (int i = 0; i < 53; i++)
