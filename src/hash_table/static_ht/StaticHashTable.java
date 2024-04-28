@@ -1,12 +1,10 @@
 package hash_table.static_ht;
 
-import hash_table.HashTable;
-
 import java.util.*;
 
 import static java.lang.Math.pow;
 
-public class StaticHashTable implements HashTable
+public class StaticHashTable
 {
     public final int size;
     private final Bucket[] buckets;
@@ -101,7 +99,6 @@ public class StaticHashTable implements HashTable
         }
     }
 
-    @Override
     public void insert(Object key, Object value)
     {
         int index = hash(key);
@@ -130,14 +127,12 @@ public class StaticHashTable implements HashTable
         block.insert(newItem);
     }
 
-    @Override
     public Object get(Object key)
     {
         Item item = search(key);
         return (item != null) ? item.value : null;
     }
 
-    @Override
     public void delete(Object key)
     {
         Item item = search(key);

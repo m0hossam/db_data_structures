@@ -1,4 +1,5 @@
 import hash_table.static_ht.StaticHashTable;
+import hash_table.extendible_ht.ExtendibleHashTable;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -9,6 +10,8 @@ public class Main
     public static void main(String[] args)
     {
         scanner = new Scanner(System.in);
+
+
 
         scanner.close();
     }

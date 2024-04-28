@@ -4,17 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8162e0b6-0710-4b84-abee-49a2801d50ad" name="Changes" comment="Finished static hashtable">
-      <change afterPath="$PROJECT_DIR$/src/hash_table/extensible_ht/ExtensibleHashTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hash_table/static_ht/Bucket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hash_table/static_ht/StaticHashTable.java" afterDir="false" />
+    <list default="true" id="8162e0b6-0710-4b84-abee-49a2801d50ad" name="Changes" comment="Fixed naming, access modifiers &amp; structure">
+      <change afterPath="$PROJECT_DIR$/src/hash_table/extendible_ht/Block.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hash_table/extendible_ht/Bucket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hash_table/extendible_ht/Item.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hash_table/StaticHashTable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hash_table/components/Block.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hash_table/components/Bucket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hash_table/static_ht/Block.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hash_table/components/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hash_table/static_ht/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hash_table/HashTable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hash_table/extensible_ht/ExtensibleHashTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hash_table/extendible_ht/ExtendibleHashTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hash_table/static_ht/StaticHashTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hash_table/static_ht/StaticHashTable.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +45,9 @@
       </UrlAndAccount>
     </option>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -55,18 +57,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/IDEA Repos/db_data_structures/src/hash_table/extensible_ht",
-    "onboarding.tips.debug.path": "D:/IDEA Repos/db_data_structures/src/Main.java"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/IDEA Repos/db_data_structures/src/hash_table/extensible_ht&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;D:/IDEA Repos/db_data_structures/src/Main.java&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\IDEA Repos\db_data_structures\src\hash_table\extensible_ht" />
@@ -112,7 +115,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711923553350</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Fixed naming, access modifiers &amp; structure">
+      <option name="closed" value="true" />
+      <created>1712432306304</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1712432306304</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -130,6 +141,7 @@
     <MESSAGE value="Created initial structure" />
     <MESSAGE value="Implemented static HT search/insert" />
     <MESSAGE value="Finished static hashtable" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished static hashtable" />
+    <MESSAGE value="Fixed naming, access modifiers &amp; structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed naming, access modifiers &amp; structure" />
   </component>
 </project>
