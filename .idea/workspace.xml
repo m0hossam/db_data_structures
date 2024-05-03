@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8162e0b6-0710-4b84-abee-49a2801d50ad" name="Changes" comment="Fixed naming, access modifiers &amp; structure">
-      <change afterPath="$PROJECT_DIR$/src/hash_table/extendible_ht/Block.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hash_table/extendible_ht/Bucket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hash_table/extendible_ht/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="8162e0b6-0710-4b84-abee-49a2801d50ad" name="Changes" comment="Partially implemented extendible_ht insert">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hash_table/HashTable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hash_table/extensible_ht/ExtensibleHashTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hash_table/extendible_ht/ExtendibleHashTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hash_table/static_ht/StaticHashTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hash_table/static_ht/StaticHashTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hash_table/extendible_ht/ExtendibleHashTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hash_table/extendible_ht/ExtendibleHashTable.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +116,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712432306304</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Partially implemented extendible_ht insert">
+      <option name="closed" value="true" />
+      <created>1714342247053</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1714342247053</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -142,6 +143,7 @@
     <MESSAGE value="Implemented static HT search/insert" />
     <MESSAGE value="Finished static hashtable" />
     <MESSAGE value="Fixed naming, access modifiers &amp; structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed naming, access modifiers &amp; structure" />
+    <MESSAGE value="Partially implemented extendible_ht insert" />
+    <option name="LAST_COMMIT_MESSAGE" value="Partially implemented extendible_ht insert" />
   </component>
 </project>
