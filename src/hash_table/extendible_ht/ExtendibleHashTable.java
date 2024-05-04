@@ -1,5 +1,7 @@
 package hash_table.extendible_ht;
 
+import utility.DSException;
+
 public class ExtendibleHashTable
 {
     public final int maxGlobalDepth;
@@ -15,15 +17,28 @@ public class ExtendibleHashTable
             block = new Block();
     }
 
-    private Bucket[] splitBucket(Bucket originalBucket)
+    private void splitAndInsert(Bucket originalBucket, Item newItem)
     {
         // Split bucket into 2 buckets & increase local depth
         Bucket firstBucket = new Bucket(originalBucket.localDepth + 1);
         Bucket secondBucket = new Bucket(originalBucket.localDepth + 1);
-        return new Bucket[]{firstBucket, secondBucket};
+
+        // Redistribute & adjust pointers
+        redistributeItems(originalBucket, firstBucket, secondBucket);
+        adjustPointers(originalBucket, firstBucket, secondBucket);
+
+        // Try to insert
+        try
+        {
+            insertNewItem(firstBucket, secondBucket,newItem);
+        }
+        catch (DSException needAnotherSplitException)
+        {
+            insertKey(newItem.key); // Try to split and insert again
+        }
     }
 
-    private void redistributeItems(Bucket originalBucket, Bucket firstBucket, Bucket secondBucket, Item newItem)
+    private void redistributeItems(Bucket originalBucket, Bucket firstBucket, Bucket secondBucket)
     {
         // Copy items from original bucket
         Item[] originalBucketItems = new Item[originalBucket.numItems];
@@ -38,8 +53,6 @@ public class ExtendibleHashTable
             else
                 secondBucket.insertItem(item);
         }
-
-        // TODO: Insert new item & check for overflow (another split)
     }
 
     private void adjustPointers(Bucket originalBucket, Bucket firstBucket, Bucket secondBucket)
@@ -61,38 +74,67 @@ public class ExtendibleHashTable
         }
     }
 
-    public void insertKey(int key)
+    private void insertNewItem(Bucket firstBucket, Bucket secondBucket, Item newItem) throws DSException
     {
-        Item newItem = new Item(key);
-        int index = key & ((1 << globalDepth) - 1); // mask = 2^globalDepth - 1
-        Bucket bucket = directory[index].bucket;
-
-        // if bucket is not full
-        if (!bucket.isFull())
+        // Insert new item & check for overflow (need another split)
+        int newBitMask = (1 << globalDepth) >> firstBucket.localDepth; // 2^globalDepth >> newLocalDepth
+        if ((newItem.key & newBitMask) == 0)
         {
-            bucket.insertItem(newItem);
-            return;
+            if (firstBucket.isFull())
+                throw new DSException("Bucket full, need another split!");
+            else
+                firstBucket.insertItem(newItem);
         }
-
-        // j < i
-        if (bucket.localDepth < globalDepth)
+        else
         {
-            Bucket[] newBuckets = splitBucket(bucket);
-            Bucket firstBucket = newBuckets[0], secondBucket = newBuckets[1];
-            redistributeItems(bucket, firstBucket, secondBucket, newItem);
-            adjustPointers(bucket, firstBucket, secondBucket);
+            if (secondBucket.isFull())
+                throw new DSException("Bucket full, need another split!");
+            else
+                secondBucket.insertItem(newItem);
         }
+    }
 
-        // j == i
+    private void increaseGlobalDepth() throws DSException
+    {
+        if (globalDepth == maxGlobalDepth)
+            throw new DSException("Max global depth reached!");
+
+        globalDepth++;
         Block[] tempDirectory = directory.clone();
-        globalDepth++; // TODO: Limit to max global depth
         directory = new Block[1 << globalDepth];
         for (int i = 0; i < directory.length; i++) // assign buckets to the new directory
         {
             int oldIndex = i >> 1;
             directory[i] = tempDirectory[oldIndex];
         }
-        // TODO: perform same as (j < i) case
+    }
+
+    public void insertKey(int key)
+    {
+        Item newItem = new Item(key);
+        int index = key & ((1 << globalDepth) - 1); // mask = 2^globalDepth - 1
+        Bucket bucket = directory[index].bucket;
+
+        if (!bucket.isFull()) // If bucket is not full
+        {
+            bucket.insertItem(newItem);
+        }
+        else if (bucket.localDepth < globalDepth) // If local depth < global depth
+        {
+            splitAndInsert(bucket, newItem);
+        }
+        else // If local depth == global depth
+        {
+            try
+            {
+                increaseGlobalDepth();
+                splitAndInsert(bucket, newItem);
+            }
+            catch (DSException e)
+            {
+                System.out.println(e.getMessage()); // Max global depth reached
+            }
+        }
     }
 
     public void deleteKey(int key)

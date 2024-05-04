@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8162e0b6-0710-4b84-abee-49a2801d50ad" name="Changes" comment="Partially implemented extendible_ht insert">
+    <list default="true" id="8162e0b6-0710-4b84-abee-49a2801d50ad" name="Changes" comment="Refactored insert method into smaller methods">
+      <change afterPath="$PROJECT_DIR$/src/utility/DSException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hash_table/extendible_ht/ExtendibleHashTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hash_table/extendible_ht/ExtendibleHashTable.java" afterDir="false" />
     </list>
@@ -124,7 +125,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714342247053</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Refactored insert method into smaller methods">
+      <option name="closed" value="true" />
+      <created>1714780545939</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1714780545939</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -144,6 +153,7 @@
     <MESSAGE value="Finished static hashtable" />
     <MESSAGE value="Fixed naming, access modifiers &amp; structure" />
     <MESSAGE value="Partially implemented extendible_ht insert" />
-    <option name="LAST_COMMIT_MESSAGE" value="Partially implemented extendible_ht insert" />
+    <MESSAGE value="Refactored insert method into smaller methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored insert method into smaller methods" />
   </component>
 </project>
