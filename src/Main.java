@@ -11,9 +11,22 @@ public class Main
     {
         scanner = new Scanner(System.in);
 
-
-
         scanner.close();
+    }
+
+    public static void testExtendibleHashTable()
+    {
+        ExtendibleHashTable ht = new ExtendibleHashTable();
+        ht.insertKey(5);
+        ht.insertKey(7);
+        ht.insertKey(13);
+        ht.insertKey(15);
+        ht.insertKey(11);
+        ht.insertKey(6);
+        ht.insertKey(0);
+        ht.insertKey(1);
+        ht.insertKey(0);
+        ht.print();
     }
 
     public static void testStaticHashTable()
