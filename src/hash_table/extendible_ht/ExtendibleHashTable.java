@@ -6,6 +6,7 @@ import java.util.Arrays;
 
 public class ExtendibleHashTable
 {
+    // DOES NOT IMPLEMENT OVERFLOW CHAINS (INSERTING THE SAME KEY THRICE BREAKS TABLE)
     public final int maxGlobalDepth;
     public int globalDepth;
     private Block[] directory;
@@ -160,11 +161,6 @@ public class ExtendibleHashTable
         }
     }
 
-    public void deleteKey(int key)
-    {
-
-    }
-
     public void print()
     {
         System.out.println(">> MAX GLOBAL DEPTH: " + maxGlobalDepth);
@@ -173,6 +169,11 @@ public class ExtendibleHashTable
         {
             Bucket bucket = directory[i].bucket;
             System.out.println("Block: " + intToBinary(i, globalDepth) + " ->");
+
+            if (i + 1 < directory.length) // if this is not the last block
+                if (directory[i + 1].bucket == bucket) // if next block points to same bucket
+                    continue;
+
             System.out.println("\tBucket Local Depth: " + bucket.localDepth);
             for (int j = 0; j < bucket.numItems; j++)
                 System.out.println("\t\tKey: " + intToBinary(bucket.items[j].key, maxGlobalDepth) + " - " + bucket.items[j].key);

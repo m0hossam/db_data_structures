@@ -17,16 +17,33 @@ public class Main
     public static void testExtendibleHashTable()
     {
         ExtendibleHashTable ht = new ExtendibleHashTable();
-        ht.insertKey(5);
-        ht.insertKey(7);
-        ht.insertKey(13);
-        ht.insertKey(15);
-        ht.insertKey(11);
-        ht.insertKey(6);
-        ht.insertKey(0);
-        ht.insertKey(1);
-        ht.insertKey(0);
+
+        int[] keys = new int[]{5, 7, 13, 15, 11, 6, 0, 1, 0};
+        for (int key : keys)
+            ht.insertKey(key);
         ht.print();
+        System.out.println("END OF TEST\n");
+
+        ht = new ExtendibleHashTable();
+        keys = new int[]{0b0000, 0b0001, 0b0010, 0b0011, 0b0100, 0b0110, 0b1000};
+        for (int key : keys)
+            ht.insertKey(key);
+        ht.print();
+        System.out.println("END OF TEST\n");
+
+        ht = new ExtendibleHashTable();
+        ht.insertKey(0b0001);
+        ht.insertKey(0b1001);
+        ht.insertKey(0b1100);
+        ht.print();
+        ht.insertKey(0b1010);
+        ht.print();
+        ht.insertKey(0b0000);
+        ht.insertKey(0b0111);
+        ht.print();
+        ht.insertKey(0b1000);
+        ht.print();
+        System.out.println("END OF TEST\n");
     }
 
     public static void testStaticHashTable()
